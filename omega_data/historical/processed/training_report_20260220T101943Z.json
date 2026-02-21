@@ -1,0 +1,116 @@
+{
+  "generated_at": "20260220T101943Z",
+  "config": {
+    "underlying_instrument_key": "NSE_INDEX|Nifty 50",
+    "from_date": "2024-01-01",
+    "to_date": "2024-03-01",
+    "interval": "day",
+    "strike_window": 6,
+    "top_n_contracts": 0,
+    "max_contracts_per_expiry": 6,
+    "max_expiries": 1,
+    "max_pages_per_expiry": 4,
+    "train_model": true,
+    "risk_free_rate": 0.065,
+    "dividend_yield": 0.012,
+    "india_vix_proxy": 15.0,
+    "output_root": "omega_data",
+    "model_path": "omega_data/pricing_model.joblib",
+    "n_paths": 4000,
+    "n_bootstrap": 300,
+    "max_rows_for_pricing": 1500,
+    "walk_forward_splits": 3,
+    "rollback_on_degradation": true,
+    "degradation_tolerance_pct": 2.0,
+    "backup_existing_model": true
+  },
+  "rows_raw_candles": 240,
+  "rows_processed": 240,
+  "rows_labeled": 240,
+  "expiries_used": [
+    "2024-01-25"
+  ],
+  "spot_hint": 22125.0,
+  "training": {
+    "trained": true,
+    "rows_train": 192,
+    "rows_test": 48,
+    "mae_test": 0.008748835543780144,
+    "rmse_test": 0.010660102012370406,
+    "mape_test_pct": 203.90380734439995,
+    "direction_hit_rate_test": 0.4166666666666667,
+    "signed_corr_test": 0.19366763396884135,
+    "bias_test": 0.006166264301192562,
+    "baseline_metrics": null,
+    "candidate_metrics": {
+      "mae": 0.008748835543780144,
+      "rmse": 0.010660102012370406,
+      "mape_pct": 203.90380734439995,
+      "direction_hit_rate": 0.4166666666666667,
+      "signed_corr": 0.19366763396884135,
+      "bias": 0.006166264301192562,
+      "rows": 48
+    },
+    "walk_forward": {
+      "aggregate": {
+        "folds_used": 3,
+        "rows_total": 180,
+        "mae": 0.007956843913417451,
+        "rmse": 0.010266146922292597,
+        "mape_pct": 215.97633604561284,
+        "direction_hit_rate": 0.5444444444444445,
+        "signed_corr": 0.12259343126642393,
+        "bias": -0.00040155969708031264
+      },
+      "folds": [
+        {
+          "mae": 0.006840628129547255,
+          "rmse": 0.008143869458599236,
+          "mape_pct": 126.40753048863891,
+          "direction_hit_rate": 0.6166666666666667,
+          "signed_corr": 0.4074453764817972,
+          "bias": -0.002412042962235137,
+          "rows": 60,
+          "fold": 1,
+          "train_rows": 60,
+          "test_rows": 60
+        },
+        {
+          "mae": 0.008655502399329012,
+          "rmse": 0.01260092743807371,
+          "mape_pct": 357.1331280234555,
+          "direction_hit_rate": 0.55,
+          "signed_corr": -0.06492178052815338,
+          "bias": 0.0009885678663274485,
+          "rows": 60,
+          "fold": 2,
+          "train_rows": 120,
+          "test_rows": 60
+        },
+        {
+          "mae": 0.008374401211376089,
+          "rmse": 0.010053643870204845,
+          "mape_pct": 164.3883496247441,
+          "direction_hit_rate": 0.4666666666666667,
+          "signed_corr": 0.025256697845628055,
+          "bias": 0.00021879600466675082,
+          "rows": 60,
+          "fold": 3,
+          "train_rows": 180,
+          "test_rows": 60
+        }
+      ]
+    },
+    "rolled_back": false,
+    "degradation_detected": false,
+    "backup_model_path": null,
+    "model_path": "omega_data/pricing_model.joblib"
+  },
+  "artifacts": {
+    "raw_contracts_path": "omega_data/historical/raw/contracts_20260220T101943Z.json",
+    "raw_candles_run_path": "omega_data/historical/raw/candles_20260220T101943Z.parquet",
+    "raw_candles_master_path": "omega_data/historical/raw/candles_master.parquet",
+    "processed_features_path": "omega_data/historical/processed/features.parquet",
+    "training_report_path": "omega_data/historical/processed/training_report_20260220T101943Z.json"
+  }
+}
